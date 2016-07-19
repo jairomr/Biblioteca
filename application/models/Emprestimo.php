@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Emprestimo extends CI_Model {
-
+        //Atributos
         private $idEmprestimo;
         private $dataEmprestimo;
         private $prazo;
