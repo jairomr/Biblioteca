@@ -18,6 +18,27 @@ function load_modulo($modulo = NULL, $tela = NULL, $diretorio = 'components') {
         return FALSE;
     }
 }
+function breadcrumb($limite=2) {
+    $CI = & get_instance();
+    $limite--;
+    $html ='<ol class="breadcrumb">'."\n".'<li><a href="'.base_url().'"><i class="fa fa-dashboard"></i> HOME</a></li>';
+    $link='';
+    $i=0;
+    $j=count($CI->uri->segment_array())-1;
+    while ($i <= $j&&$i<=$limite) {
+        if($i==$j||$i==$limite){
+            $link .= $CI->uri->slash_segment($i+1, 'leading');
+            $html .='<li class="active"><a href="'.base_url($link).'">'.strtoupper($CI->uri->segment($i+1)).'</a></li>'."\n";
+        }else{
+            $link .= $CI->uri->slash_segment($i+1, 'leading');
+            $html .='<li><a href="'.base_url($link).'">'.strtoupper($CI->uri->segment($i+1)).'</a></li>'."\n";
+        }
+        $i++;   
+    }
+    $html.='</ol>';
+    return $html;
+
+}
 function includesTema($file = NULL, $diretorio = 'includes',$var = NULL) {
     $CI = & get_instance();
     if ($file != NULL) {

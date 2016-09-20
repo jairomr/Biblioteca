@@ -34,7 +34,7 @@ function load_base($template = 'page',$debug=false) {
     set_tema('mainSidebar',includesTema('mainSidebar'));
     set_tema('footer',includesTema('footer'));
     set_tema('controlSidebar',includesTema('controlSidebar'));
-    set_tema('titilo_base', 'Biblioteca');
+    set_tema('titulo_base', 'Biblioteca');
 }
 
 //.load_base
