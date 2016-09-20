@@ -18,6 +18,26 @@ function load_modulo($modulo = NULL, $tela = NULL, $diretorio = 'components') {
         return FALSE;
     }
 }
+function includesTema($file = NULL, $diretorio = 'includes',$var = NULL) {
+    $CI = & get_instance();
+    if ($file != NULL) {
+        return $CI->load->view("$diretorio/$file",$var, TRUE);
+    } else {
+        return FALSE;
+    }
+}
+
+function load_conteudo($modulo = NULL,$tela=NULL, $dados = NULL) {
+    $CI = & get_instance();
+    if ($modulo != NULL && $tela !=null) {
+        return $CI->parser->parse("$modulo/$tela", $dados, true);
+    }elseif($modulo != NULL){
+        return $CI->parser->parse("$modulo", $dados, true);
+    } else {
+        return FALSE;
+    }
+}
+
 
 //.load_modulo
 /**

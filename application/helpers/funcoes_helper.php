@@ -12,7 +12,9 @@ function erros_validacao() {
         echo '<div class="alert alert-danger"><strong>Erro!</strong>' . validation_errors() . '</div>';
     }
 }
-
+function base_url2($link){
+    echo base_url($link);
+}
 //.erros_validacao
 function get_calendario() {
     $CI = & get_instance();
