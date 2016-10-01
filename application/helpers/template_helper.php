@@ -48,7 +48,7 @@ function includesTema($file = NULL, $diretorio = 'includes',$var = NULL) {
     }
 }
 
-function load_conteudo($modulo = NULL,$tela=NULL, $dados = NULL) {
+function load_conteudo($modulo = NULL,$tela=NULL, $dados = array()) {
     $CI = & get_instance();
     if ($modulo != NULL && $tela !=null) {
         return $CI->parser->parse("$modulo/$tela", $dados, true);

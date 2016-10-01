@@ -11,12 +11,11 @@ class Welcome extends CI_Controller {
     }
 	public function index()
 	{
+		painel();
 		set_tema('titulo', 'Login');
 		set_tema('subtitulo','Cadaf');
-		$data= array(
-			'teste' => 'oi',
-			'teste2' => ENVIRONMENT);
-        set_tema('conteudo', load_conteudo('usuarios', 'cadastra', $data));
+		set_tema('js',ajax_form('usuarioCadastro','usuarios/cadastroAjax'),false);
+        set_tema('conteudo', load_conteudo('usuarios', 'cadastra'));
         load_template();
 	}
 }

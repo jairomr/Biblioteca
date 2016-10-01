@@ -20,3 +20,22 @@ function ajax_redirect($location = '')
         ->set_content_type('application/x-javascript')
         ->set_output($script);
 }
+function ajax_form($idForm,$link){
+	$html="<script>
+	$('#$idForm').submit(function(e) {
+    	var form = $(this);
+    	e.preventDefault();
+   		$.ajax({
+        	type: 'POST',
+        	url: '".site_url($link)."',
+        	data: form.serialize(), // <--- THIS IS THE CHANGE
+        	dataType: 'json',
+        	success: function(data){
+            	msgAlert(data.type,data.title,data.msg);
+                console.log(data);
+        	},
+        	error: function(data) { msgAlert('danger','Erro','Erro ao enviar temte mais tarde'); }
+   		});
+	});</script>";
+	return $html;
+}

@@ -29,16 +29,17 @@ function load_base($template = 'page',$debug=false) {
     set_tema('js',load_js('plugins/jQuery/jquery-2.2.3.min','static'),false);
     set_tema('js',load_js('bootstrap/js/bootstrap.min','static'),false);
     set_tema('js',load_js(array('slimScroll/jquery.slimscroll.min','fastclick/fastclick'),'static/plugins'),false);
-    set_tema('js',load_js(array('app.min','demo'),'static/dist/js'),false);
-    set_tema('mainHeader',includesTema('mainHeader'));
-    set_tema('mainSidebar',includesTema('mainSidebar'));
-    set_tema('footer',includesTema('footer'));
-    set_tema('controlSidebar',includesTema('controlSidebar'));
+    set_tema('js',load_js(array('app.min','demo','msgAlert'),'static/dist/js'),false);
     set_tema('titulo_base', 'Biblioteca');
 }
 
 //.load_base
-
+function painel(){
+    set_tema('mainHeader',includesTema('mainHeader'));
+    set_tema('mainSidebar',includesTema('mainSidebar'));
+    set_tema('footer',includesTema('footer'));
+    set_tema('controlSidebar',includesTema('controlSidebar'));
+}
 function init_site() {
     $CI = & get_instance();
     $CI->load->library(array('sistema', 'session', 'form_validation'));

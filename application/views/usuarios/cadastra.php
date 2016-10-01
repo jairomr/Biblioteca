@@ -11,14 +11,14 @@
           </div>
         </div>
         <div class="box-body">
-            <form class="col-xs-6 col-xs-offset-3">
+            <form class="col-xs-6 col-xs-offset-3" id='usuarioCadastro'>
                 <div class="form-group">
                   <label for="name">Nome</label>
-                  <input type="text" class="form-control" placeholder="Nome">
+                  <input name='name' type="text" class="form-control" placeholder="Nome">
                 </div>
                 <div class="form-group">
                   <label for="login">Apelido</label>
-                  <input type="text" class="form-control" placeholder="Seu Apelido">
+                  <input name='login' type="text" class="form-control" placeholder="Seu Apelido">
                 </div>
                 <div class="form-group">
                   <label for="email">Email</label>
@@ -32,6 +32,7 @@
                   <label for="exampleInputPassword12">Repita Senha</label>
                   <input type="password2" class="form-control" id="exampleInputPassword2" placeholder="Repita Senha">
                 </div>
+                <button type="submit" class="btn btn-block btn-primary">Primary</button>
             </form>
 
         </div>
