@@ -11,20 +11,27 @@ class Emprestimo extends CI_Controller {
     }
 	public function index()
 	{	
-		set_tema('titulo', 'Login');
-		$data= array(
-			'teste' => 'oi',
-			'teste2' => ENVIRONMENT);
-        set_tema('conteudo', load_conteudo('usuarios', 'cadastra', $data));
+		set_tema('titulo', 'Registro de Emprestimo');
+		set_tema("css", load_css("daterangepicker","static/plugins/daterangepicker"),false);
+		set_tema("js", load_js("daterangepicker","static/plugins/daterangepicker"),false);
+		set_tema("js",'<script>
+  $(function () {
+$("#reservation").daterangepicker();
+});</script>',false);
+        set_tema('conteudo', load_conteudo('emprestimo', 'registrar',array()));
         load_template();
 	}
-	public function cadastro()
+	public function controle()
 	{	
-		set_tema('titulo', 'Login');
-		$data= array(
-			'teste' => $this->uri->uri_string(),
-			'teste2' => ENVIRONMENT, );
-        set_tema('conteudo', load_conteudo('usuarios', 'cadastra', $data));
+		set_tema('titulo', 'Controle de Emprestimo');
+		set_tema("css", load_css("daterangepicker","static/plugins/daterangepicker"),false);
+		set_tema("js", load_js("daterangepicker","static/plugins/daterangepicker"),false);
+		set_tema("js",'<script>
+  $(function () {
+$("#reservation").daterangepicker();
+});</script>',false);
+        set_tema('conteudo', load_conteudo('emprestimo', 'registrar',array()));
         load_template();
 	}
+	
 }
