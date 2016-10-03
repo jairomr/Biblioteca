@@ -11,7 +11,7 @@
 			</div>
 		</div>
 		<div class="box-body">
-			<form class="col-xs-6 col-xs-offset-3">
+			<form id='Registrar' class="col-xs-6 col-xs-offset-3">
 				<div class="form-group">
 					<label for="exampleInputEmail1">Nome do Livro</label>
 					<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nome do Livro">

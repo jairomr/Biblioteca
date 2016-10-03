@@ -12,17 +12,16 @@ class Usuarios extends CI_Controller {
 	public function index()
 	{	
 		set_tema('titulo', 'Login');
-		$data= array(
-			'teste' => 'oi',
-			'teste2' => ENVIRONMENT);
+		
 		set_tema('conteudo', load_conteudo('usuarios', 'cadastra', $data));
 		load_template();
 	}
 	public function cadastro()
-	{	
-		set_tema('titulo', 'Login');
+	{
+		painel();	
+		set_tema('titulo', 'Cadastros');
 		set_tema('subtitulo','Cadaf');
-		set_tema('js',ajax_form('usuarioCadastro',''),false);
+		set_tema('js',ajax_form('usuarioCadastro','usuarios/cadastroAjax'),false);
 		set_tema('conteudo', load_conteudo('usuarios', 'cadastra'));
 		load_template();
 	}

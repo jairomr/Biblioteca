@@ -11,6 +11,7 @@ class Emprestimo extends CI_Controller {
     }
 	public function index()
 	{	
+		painel();
 		set_tema('titulo', 'Registro de Emprestimo');
 		set_tema("css", load_css("daterangepicker","static/plugins/daterangepicker"),false);
 		set_tema("js", load_js("daterangepicker","static/plugins/daterangepicker"),false );
