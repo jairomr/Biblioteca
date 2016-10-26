@@ -14,7 +14,16 @@ function password($p) {
 }
 function teemo($p) {
    
-    return sha1('ajçiovfnwej'.$p); //md5('ÇÂp7ãIn T3&m0'.sha1(md5('c4pItão-t&3mo'.base64_encode(pack('H*', sha1('ajçiovfnwej'.$p))).'n0-comando')).'On D[]][Y');
+    return md5('ÇÂp7ãIn T3&m0'.
+        sha1(
+            md5('c4pItão-t&3mo'.
+                base64_encode(
+                    pack('H*', sha1('ajçiovfnwej'.$p)
+                        )
+                    ).
+                'n0-comando')
+            ).
+        'On D[]][Y');
     
 }
 //.password   

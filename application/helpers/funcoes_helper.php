@@ -1,7 +1,15 @@
 <?php
 
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+function debugPrint($a,$titulo='Teste'){
+    echo '
+    <hr>
+    <p>'.$titulo.'</p>
+    <pre>';
+    print_r($a);
+    echo '</pre>
+    <hr>';
+}
 /**
  * ------------------------------
  * Metodo de mostra erro de validaçao
