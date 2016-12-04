@@ -1,9 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 /**
- * Modolo de livro
- * Esta classe é um Model de livro projetado para o o aplicativo de biblioteca
- * @author Ezequiel De Souza Feitosa <leo@genilhu.com> 
+ * Modúlo de livro
+ * Esta classe é um Model de livro projetado para o aplicativo de biblioteca
+ * @author Ezequiel De Souza Feitosa <zicao5@hotmail.com> 
  */
 class Livro extends CI_Model {
     public function __construct()
@@ -36,8 +36,8 @@ class Livro extends CI_Model {
     	$this->db->insert('livros',$dados);
     }
     /**
-     * Obenten toda as informação do livro
-     * @param  int $id Numero de indentificação do livro
+     * Obtem todas as informação do livro
+     * @param  int $id Numero de identificação do livro
      * @return objeto     Retorna uma objeto com as informação do livro
      */
     public function getById($id=null){
@@ -52,7 +52,7 @@ class Livro extends CI_Model {
      */
     public function getLivros(){
         return $this->db->get('livros');
-    }
+    } 
     /**
      * Atualiza os dados de um livro
      * @param  int $id   Identificação do livro
