@@ -6,6 +6,20 @@ class Reserva extends CI_Model {
         // Call the CI_Model constructor
         parent::__construct();
     }
+
+
+
+
+
+
+    /**
+     * Registar a reserva do livro
+     * @param  date $data_retirada    data da retriada do livro
+     * @param  date $data_volta     data da devolução do livro
+     * @param  int $livros_idlivros intetificação do livro
+     * @param  int $usuarios_idusuarios intetificação do usuario
+     * @param  string $obs           string de observação
+     */
     public function registar($data_retirada,$data_volta,$livros_idlivros,$usuarios_idusuarios,$obs=''){
         $d1=new DateTime($data_retirada);
         $d2=new DateTime($data_volta);
@@ -20,18 +34,32 @@ class Reserva extends CI_Model {
             $this->db->insert('reserva',$dados);
         }
     }
+
+
+
+
     public function getReserva($situacao=null){
         if($situacao===0||$situacao===1){
         $this->db->where('situacao', $situacao);
         }
         return $this->db->get('reserva');
     }
-    public function getById($id=null){
+
+
+
+
+
+    public function pegarPeloId($id=null){
         if($id!=null){
         $this->db->where('idreserva', $id);
         return $this->db->get('reserva');
         }
     }
+
+
+
+
+
     public function setSituacao($id,$situacao){
         if($id!=null&&$situacao===0||$situacao===1){
         $this->db->set('situacao', $situacao);
@@ -39,4 +67,8 @@ class Reserva extends CI_Model {
         $this->db->update('reserva');
         }
     }
+
+
+
+    
 }

@@ -17,7 +17,6 @@ class Usuarios extends CI_Model {
         if ($dados) {
             if ($id) {
                 $this->db->where('id', $id);
-                $this->db->where('isDelete', 0);
                 if ($this->db->update("usuario", $dados)) {
                     return true;
                 } else {
@@ -35,19 +34,25 @@ class Usuarios extends CI_Model {
         }
         
     }
+
+
+
     /**
      * Recupera o registro do banco de dados
      * @param $id - Se indicado, retorna somente um registro, caso contário, todos os registros.
+     * @param $order_by - Tipo de ordenação 'desc' para decresente e 'asc'
      * @return objeto da banco de dados da tabela usuario
      */
     public function get($id = null,$order_by='desc'){
-        $this->db->where('isDelete', 0);
         if ($id) {
             $this->db->where('id', $id);
         }
         $this->db->order_by("id", ,$order_by);
         return $this->db->get('usuario');
     }
+
+
+
     /**
      * Deleta um registro.
      * @param $id do registro a ser deletado
@@ -56,15 +61,19 @@ class Usuarios extends CI_Model {
     public function delete($id = null){
         if ($id) {
             $this->db->where('id', $id);
-            $this->db->where('isDelete', 0);
-            if ($this->db->insert("usuario", array('isDelete' => , 1))) {
+            if ($this->db->delete()) {
                     return true;
-                } else {
+            } else {
                     return false;
             }
-            return true;
+            return false;
         }else{
             return false;
         }
     }
+
+
+
+
+
 }

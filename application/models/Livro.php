@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * Modolo de livro
  * Esta classe é um Model de livro projetado para o o aplicativo de biblioteca
- * @author Ezequiel De Souza Feitosa <leo@genilhu.com> 
+ * @author Ez
  */
 class Livro extends CI_Model {
     public function __construct()
@@ -11,6 +11,10 @@ class Livro extends CI_Model {
                 // Call the CI_Model constructor
         parent::__construct();
     }
+
+
+
+
     /**
      * Registra um livro no banco de dados
      * @param  date $data_registro Data do registro
@@ -35,6 +39,11 @@ class Livro extends CI_Model {
     		);
     	$this->db->insert('livros',$dados);
     }
+
+
+
+
+
     /**
      * Obenten toda as informação do livro
      * @param  int $id Numero de indentificação do livro
@@ -46,6 +55,11 @@ class Livro extends CI_Model {
             return $this->db->get('livros');
         }
     }
+
+
+
+
+
     /**
      * Retorna todos os livros
      * @return objeto Retorna um objeto com todos os livro
@@ -53,13 +67,23 @@ class Livro extends CI_Model {
     public function getLivros(){
         return $this->db->get('livros');
     }
+
+
+
+
+
     /**
      * Atualiza os dados de um livro
      * @param  int $id   Identificação do livro
-     * @param  array $data Lista com as Atualizaçãoes
+     * @param  array $dado Lista com as Atualizaçãoes
      */
-    public function update($id,$data){
+    public function update($id,$dado){
         $this->db->where('idlivros', $id);
-        $this->db->update('livros',$data);
+        $this->db->update('livros',$dado);
     }
+
+
+
+
+    
 }
